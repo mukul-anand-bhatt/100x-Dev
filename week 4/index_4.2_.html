@@ -1,0 +1,27 @@
+<html>
+    <script>
+        function addTodo(){
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const originalHtml = documnet.getElementById("container").innerHTML;
+
+            const outerDiv = documnet.createElement("div");
+            outerDiv.innerHTML=title;
+            document.getElementById("container").appendChild(outerDiv);
+            // document.getElementById("container").innerHTML=originalHtml+ `<div>
+            //     <div>${title}</div>
+            //     <div>${descreption}</div>
+            //     <button>mark as done</button>
+            //     </div>
+            //     `
+        }
+    </script>
+    <div>
+        <input id="title" type="text" placeholder="title"></intput>
+        <br></br>
+        <input id="description" type="text" placeholder="description"></input>
+        <br></br>
+        <button onclick="addTodo()">Add TODO</button>
+        <div id="container"></div>
+    </div>
+</html>

@@ -1,0 +1,8 @@
+The first condition (if (!(username == "mukul" && password == "pass"))) uses the logical 
+NOT (!) operator to negate the result of the expression inside the parentheses. It checks 
+if the username is not "mukul" or the password is not "pass". If either condition is true, 
+the entire expression becomes true.
+
+The second condition (if (username != "mukul" || password != "pass")) uses the logical OR 
+(||) operator. It checks if the username is not "mukul" or the password is not "pass". If 
+either condition is true, the entire expression becomes true.

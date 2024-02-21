@@ -1,0 +1,47 @@
+<html>
+    <script>
+        //this will add some delay and will not send multiple requests
+        function debouncePopulateDiv(){
+            //how do you cancel a clock?
+            //ans - - Cleartimeout is the function 
+            const timeout=setTimeout(function(){
+                populatediv()
+            },100);
+            clearTimeout(timeout)
+        }
+        function populatediv(){
+            //debouncing,throtlling
+            const a=document.getElementById("firstNumber").value;
+            const b=document.getElementById("secondNumber").value;
+            //const element =document.getElementById("finalSum")
+            //element.innerHTML=parseInt(a)+parseInt(b);
+            //axios a new kind of fetch to hit backend
+            //fetch
+            fetch("https://sum-server.100xdevs.com/sum?a="+ a +"&b="+ b)
+            .then(function(response){
+                console.log(response);
+                response.text()
+                    .then(function(ans){
+                       document.getElementById("finalSum").innerHTML=ans;
+                    })
+            });
+        }
+        // async function populatediv2(){
+        //     const a=document.getElementById("firstNumber").value;
+        //     const b=document.getElementById("secondNumber").value;
+        //     const response = await fetch("https://sum-server.100xdevs.com/sum?a="+ a +"&b="+ b)
+        //    //we have to use await as its an async function and returns a promise
+        //     const ans = await response.text();
+        //    document.getElementById("finalSum").innerHTML=ans;
+        // }
+    </script>
+    <body>
+        <!-- if we want to remove the button we can use onInput="function name " to call the function -->
+        <input oninput="populatediv()" id="firstNumber" type="text" placeholder="FirstNumber">
+        </input><br><br>
+        <input oninput="populatediv()" id="secondNumber" type="text" placeholder="SecondNumber">
+        </input><br><br>
+        <!-- <button onclick="populatediv()">calculate Sum</button><br></br> -->
+        <div id="finalSum"></div>
+    </body>
+</html> 
