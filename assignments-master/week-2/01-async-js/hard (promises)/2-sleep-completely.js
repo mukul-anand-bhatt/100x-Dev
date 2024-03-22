@@ -4,27 +4,37 @@
  * the function should return a promise just like before
  */
 
-function busyWait(milliseconds) {
-    return new Promise((resolve) => {
-        const startTime = Date.now();
-        const endTime = startTime + milliseconds;
+// function busyWait(milliseconds) {
+//     return new Promise((resolve) => {
+//         setTimeout((resolve)=>{
+//             console.log("promice resolved after ",n);
+//         },milliseconds*1000);
 
-        // Busy wait loop
-        while (Date.now() < endTime) {
-            // Do nothing, just wait
+//         // Busy wait loop
+
+//         resolve(`Busy wait completed for ${milliseconds} milliseconds`);
+//     });
+// }
+
+function busyWait(milliseconds){
+    return new Promise(resolve=>{
+        const start = Date.now();
+        while((Date.now()-start)<milliseconds){
+
         }
-
-        resolve(`Busy wait completed for ${milliseconds} milliseconds`);
+        resolve();
     });
 }
 
+
+
 // Example usage:
-busyWait(2000)
-    .then((message) => {
-        console.log(message);
-    })
-    .catch((error) => {
-        console.error(error);
-    });
+// busyWait(2000)
+//     .then((message) => {
+//         console.log(message);
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//     });
 
 module.exports = busyWait;

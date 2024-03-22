@@ -18,4 +18,5 @@ function cleanFile(filePath) {
 }
 
 // Replace 'your_file.txt' with the path to your actual file
-cleanFile('your_file.txt');
+const filename = "your_file.txt";
+cleanFile(filename);
