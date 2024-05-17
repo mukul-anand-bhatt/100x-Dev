@@ -1,2 +1,3 @@
 ## why you cant have 2 children in the top level xml
 makes it easy to do reconciliation 
+In frameworks like React, reconciliation is a key process for efficiently updating the DOM (Document Object Model) in response to changes in data or state. When the state of a component changes, React re-renders the component and performs a process called reconciliation to determine the most efficient way to update the UI.
