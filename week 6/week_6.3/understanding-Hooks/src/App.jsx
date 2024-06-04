@@ -1,21 +1,24 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect } from "react";
 
-function App() {
-  const divRef = useRef();
+// Create a component with a text input field and a button. When the component mounts or the button is clicked, 
+// automatically focus the text input field using useRef.
 
-  useEffect(() => {
-    setTimeout(() => {
-      divRef.current.innerHTML = "10"
-    }, 5000);
-  }, [])
+export function Assignment1() {
 
-  const incomeTax = 20000;
+    useEffect(() => {
 
-  return (
-    <div>
-        hi there, your income tax returns are <div ref={divRef}>{incomeTax}</div>
-    </div>
-  )
-}
+    }, []);
+
+    const handleButtonClick = () => {
+
+    };
+
+    return (
+        <div>
+            <input type="text" placeholder="Enter text here" />
+            <button onClick={handleButtonClick}>Focus Input</button>
+        </div>
+    );
+};
 
 export default App
